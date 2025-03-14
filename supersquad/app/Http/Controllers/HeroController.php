@@ -15,7 +15,7 @@ public function index()
 $hero = Superheroes::all();
 // Return a view (e.g., resources/views/tasks/index.blade.php)
 // with the tasks data
-return view('Superhero.index', compact('Heroes'));
+return view('super-heroes.index', compact('Heroes'));
 }
 /**
 * Show the form for creating a new task.
@@ -32,24 +32,25 @@ public function store(Request $request)
 {
 // Validate the request
 $validated = $request->validate([
-'hero_name' => 'required|string|max:255',
-'secret_identity' => 'nullable|string|max:255',
+   
+'hero_name' => 'required|string',
+'secret_identity' => 'nullable|string',
 'powers' => 'required|string',
-'power-catagory' => 'required|string',
+'power_catagory' => 'required|string',
 'origin' => 'required|string',
 
 ]);
 
 Superheroes::create($validated);
 // Redirect or return
-return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
+return redirect()->route('super-heroes.index')->with('success', 'Hero created successfully!');
 }
 /**
 * Display a specific task.
 */
 public function show(Superheroes $hero)
 {
-return view('heroes.show', compact('hero'));
+return view('Heroes.show', compact('Heroes'));
 }
 /**
 * leave the following empty for now
@@ -68,7 +69,7 @@ public function update(Request $request, Superheroes $hero)
 /**
 * Remove the specified task.
 */
-public function destroy(Superheroes $task)
+public function destroy(Superheroes $hero)
 {
 //
 }

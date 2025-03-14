@@ -10,8 +10,7 @@ class Superheroes extends Model
        'hero_name',
        'secret_identity',
        'powers',
-       'power-catagory',
+       'power_catagory',
        'origin',
-
-   ]
+   ];
 }

@@ -8,18 +8,18 @@ return new class extends Migration
 {
 public function up(): void
 {
-Schema::create('Heroes', function (Blueprint $table) {
+Schema::create('superheroes', function (Blueprint $table) {
 $table->bigIncrements('id');
 $table->string('hero_name');
 $table->string('secret_identity')->nullable();
-$table->string('powers')
-$table->string('power-catagory')
+$table->string('powers');
+$table->string('power_catagory');
 $table->string('origin');
 
 });
 }
 public function down(): void
 {
-Schema::dropIfExists('Heroes');
+Schema::dropIfExists('superheroes');
 }
 };
